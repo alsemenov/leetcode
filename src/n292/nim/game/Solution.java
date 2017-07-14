@@ -1,4 +1,4 @@
-package nimgame;
+package n292.nim.game;
 /**
  * <p>292. Nim Game
  * <p><a href="https://leetcode.com/problems/nim-game/">https://leetcode.com/problems/nim-game/</a>

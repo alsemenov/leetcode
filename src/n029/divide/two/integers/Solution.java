@@ -1,5 +1,11 @@
-package n29.divide.two.integers;
-
+package n029.divide.two.integers;
+/**
+ * <p>29. Divide Two Integers
+ * <p>Difficulty: Medium
+ * <p>Divide two integers without using multiplication, division and mod operator.
+ * <p>If it is overflow, return MAX_INT.
+ *
+ */
 public class Solution {
 
 	public int divide(int dividend, int divisor) {
