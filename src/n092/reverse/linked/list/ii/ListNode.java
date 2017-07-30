@@ -1,4 +1,4 @@
-package n92.reverse.linked.list.ii;
+package n092.reverse.linked.list.ii;
 
 public class ListNode {
 	int val;
