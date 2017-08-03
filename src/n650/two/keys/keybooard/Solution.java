@@ -1,5 +1,6 @@
 package n650.two.keys.keybooard;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -24,7 +25,23 @@ import java.util.PriorityQueue;
  The n will be in the range [1, 1000].</p>
  */
 public class Solution {
-	public int minSteps(int n) {
+	public int minSteps1(int n) {
+		// DP solution
+		int[] min = new int[n + 1];
+		Arrays.fill(min, Integer.MAX_VALUE);
+		min[1] = 0;
+
+		for (int i = 1; i <= n; i++) {
+			// min[i] - number of steps to achieve i 'A'
+			for (int k = 2; i * k <= n; k++) {
+				int z = i * k; // new achieved number of 'A'
+				min[z] = Math.min(min[z], min[i] + k);
+			}
+		}
+		return min[n];
+	}
+
+	public int minSteps2(int n) {
 		// The solution is using BFS algorithm
 		// node is an array of three integers:
 		//  1. number of steps to reach the node
