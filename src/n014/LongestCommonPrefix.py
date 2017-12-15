@@ -1,11 +1,13 @@
 from collections import defaultdict
 
 class Solution(object):
-    def longestCommonPrefix(self, strs):
-        """
-        14. Longest Common Prefix
+    """
+    14. Longest Common Prefix
 
-        Write a function to find the longest common prefix string amongst an array of strings.
+    Write a function to find the longest common prefix string amongst an array of strings.
+    """
+    def longestCommonPrefixUsingTrie(self, strs):
+        """
         :type strs: List[str]
         :rtype: str
         """
@@ -33,6 +35,27 @@ class Solution(object):
             p = p[c]
             l += 1
         return r
+
+
+    def longestCommonPrefix(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: str
+        """
+
+        if len(strs) == 0:
+            return ''
+
+        prefix = min(strs, key=len)
+        prefix_len = len(prefix)
+        for s in strs:
+            i = 0
+            while i < prefix_len and s[i] == prefix[i]:
+                i += 1
+            prefix_len = min(i, prefix_len)
+
+        return prefix[:prefix_len]
+
 
 def main():
     input = [
